@@ -17,9 +17,9 @@ const Tweet = props => {
   } else {
     retweetClassName = "";
   }
-  
+
   return (
-    <div className = "row box">
+    <div className = "row-box">
       <div className = "small-8 small-centered columns tweetbox">
         <div className = "row allContent">
           <div className = "small-2 columns">
@@ -29,12 +29,8 @@ const Tweet = props => {
             <div className = "row">
               <div className = "small-10 end columns">
                 <ul>
-                  <li>
-                    {props.name}
-                  </li>
-                  <li>
-                    {props.screenName}
-                  </li>
+                  {props.name}
+                  {props.screenName}
                 </ul>
               </div>
             </div>
@@ -44,16 +40,24 @@ const Tweet = props => {
               </div>
             </div>
               <div className="row">
-                <div className = "small-8 columns">
-                  <ul>
+                <div className = "small-4 columns">
+                  <ul class="inline-list">
                     <li>
                       <i className="fa fa-reply" aria-hidden="true" onClick={props.replyIcon}></i>
                     </li>
+                  </ul>
+                </div>
+                <div className = "small-4 columns">
+                  <ul class="inline-list">
                     <li>
                       <div className={retweetClassName}>
                         <i className="fa fa-retweet" aria-hidden="true" onClick={props.retweetIcon}></i>
                       </div>
                     </li>
+                  </ul>
+                </div>
+                <div className = "small-4 columns">
+                  <ul class="inline_list">
                     <li>
                       <div className={favoriteClassName}>
                         <i className="fa fa-heart" aria-hidden="true" onClick={props.likeIcon}></i>
